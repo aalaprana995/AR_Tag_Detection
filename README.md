@@ -30,6 +30,8 @@ divided in 8x8 segments.
 2) Count the number of black and white pixels in each cell.
 3) Based on the count of pixel if the number of black pixel is more than the white pixel we assign the cell as 0 else 1.
 ## Finding Tag-ID and Tag-Orientation
+
 **Orientation**
 Using the 
+
 **Tag ID**
