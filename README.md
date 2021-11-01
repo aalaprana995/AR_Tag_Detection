@@ -12,15 +12,15 @@ This repository has computer vision project. We detect AR tag and superimpose Le
 3) The Thresholded image is processed by findcontours() to find all the countours.
 4) To seperate AR-Tag from countours detected we use two properties unique to AR-tag: (i) Area of AR-Tag and (11) coners of AR-Tag has black borders around it.
 ## Finding Homographic Matrix
-1) Using the detected corner and world co-ordinates form the following matrix and let it be called "A"
-A=[x1, y1, 1, 0, 0, 0, -x2*x1, -x2*y1, -x2
-   0, 0, 0, x1, y1, 1, -y2*x1, -y2*y1, -y2
-   x3, y3, 1, 0, 0, 0, -x4*x3, -x4*y3, -x4
-   0, 0, 0, x3, y3, 1, -y4*x3, -y4*y3, -y4
-   x5, y5, 1, 0, 0, 0, -x6*x5, -x6*y5, -x6
-   0, 0, 0, x5, y5, 1, -y6*x5, -y6*y5, -y6
-   x7, y7, 1, 0, 0, 0, -x8*x7, -x8*y7, -x8
-   0, 0, 0, x7, y7, 1, -y8*x7, -y8*y7, -y8]
+1) Using the detected corner and world co-ordinates form the following matrix and let it be called "A"\
+A=[x1, y1, 1, 0, 0, 0, -x2*x1, -x2*y1, -x2\
+   0, 0, 0, x1, y1, 1, -y2*x1, -y2*y1, -y2\
+   x3, y3, 1, 0, 0, 0, -x4*x3, -x4*y3, -x4\
+   0, 0, 0, x3, y3, 1, -y4*x3, -y4*y3, -y4\
+   x5, y5, 1, 0, 0, 0, -x6*x5, -x6*y5, -x6\
+   0, 0, 0, x5, y5, 1, -y6*x5, -y6*y5, -y6\
+   x7, y7, 1, 0, 0, 0, -x8*x7, -x8*y7, -x8\
+   0, 0, 0, x7, y7, 1, -y8*x7, -y8*y7, -y8\]
 2) Find the SVD decomposition of "A.
 3) Extract the eigen-vector corresponding to the least eigen-value.
 4) Reshape the result from step 3 to a 3*3 matrix  
