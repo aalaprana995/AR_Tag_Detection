@@ -24,14 +24,34 @@ A=[x1, y1, 1, 0, 0, 0, -x2*x1, -x2*y1, -x2\
 2) Find the SVD decomposition of "A.
 3) Extract the eigen-vector corresponding to the least eigen-value.
 4) Reshape the result from step 3 to a 3*3 matrix  
+
 ## Coverting AR-Tag to AR-matrix
 1) According to the height and width of the AR-tag image, the image is 
 divided in 8x8 segments. 
 2) Count the number of black and white pixels in each cell.
 3) Based on the count of pixel if the number of black pixel is more than the white pixel we assign the cell as 0 else 1.
+
 ## Finding Tag-ID and Tag-Orientation
 
 **Orientation**
-Using the 
+
+- Case1:0 degree rotation
+If the value for matrix[2][2], matrix[2][5], matrix[5][2] is 0  while matrix[5][5] is 1. Then the angle is 0 degree.
+- Case 2: 180 degree rotation
+If the value for matrix[2][2] is 1, while matrix[2][5], matrix[5][2] and matrix[5][5] is 0. Then the angle is 180 degree.
+- Case 3: 90 degree rotation
+If the value for matrix[2][5] is 1, while matrix[2][2], matrix[5][2] and matrix[5][5] is 0. Then the angle is 90 degree.
+- Case 4: -90 degree rotation
+If the value for matrix[5][2] is 1, while matrix[2][2], matrix[2][5] and matrix[5][5] is 0. Then the angle is -90 degree.
 
 **Tag ID**
+- Case1:0 degree rotation
+matrix[3][3] +matrix[4][3]*8 +matrix[4][4]*4 + matrix[3][4]*2
+- Case 2: 90 degree rotation
+matrix[3][3]*2 + matrix[3][4]*4 + matrix[4][4]*8 + matrix[4][3]
+- Case 3: 180 degree rotation
+matrix[3][3]*4 + matrix[4][3]*2 + matrix[4][4] + matrix[3][4]*8
+- Case 4: -90 degree rotation
+matrix[3][3]*1 + matrix[3][4] + matrix[4][4]*2 + matrix[4][3]*4
+ 
+
