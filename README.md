@@ -53,5 +53,8 @@ matrix[3][3]*2 + matrix[3][4]*4 + matrix[4][4]*8 + matrix[4][3]
 matrix[3][3]*4 + matrix[4][3]*2 + matrix[4][4] + matrix[3][4]*8
 - Case 4: -90 degree rotation\
 matrix[3][3]*1 + matrix[3][4] + matrix[4][4]*2 + matrix[4][3]*4
+
+## Superimposing Lena's image
+
  
 
