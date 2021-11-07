@@ -68,6 +68,10 @@ matrix[3][3]*4 + matrix[4][3]*2 + matrix[4][4] + matrix[3][4]*8
 matrix[3][3]*1 + matrix[3][4] + matrix[4][4]*2 + matrix[4][3]*4
 
 ## Superimposing Lena's image
-hah
- 
+
+ - The corners of the AR tag detected are rearranged based on the orientation of the AR Tag.
+ - We calculated Homography matrix considering lena image as world and image as camera co-ordinate frame. Now we can calculate inverse homography from the camera frame coordinates corresponding to the world frame. Hence applying inverse homograpgy to each pixel of the template, the corresponding pixel
+of the camera frame could be determined.
+- After finding the relation between the camera frame and world frame, the pixels of camera frame are
+simply replaced by the corresponding pixels of the world frame
 
